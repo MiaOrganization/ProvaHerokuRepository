@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA')"></head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione(home='/default')"></header>
+	
+		<div id="contenitore">
+			<p id="lista">I nostri artisti</p>
+			<div class="parete">
+				<div class="ritratto" th:each = "artista : ${artisti}">
+				<img class="ritratto" src="@{ ${artista.nome} + '.jpg'}"/>
+				<p class="nome" th:text = "${artista.nome}">qui-nome</p></div>
+			</div>
+		</div>
+	
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

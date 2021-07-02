@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA')"></head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione(home='/default')"></header>
+	<form th:action="@{/admin/artista}" method="POST" th:object=${artista}>	
+	<section id="external">
+			<div id="dati-container">
+				<div class="dati-interni">
+					<div class:"dato">
+						<div class:"attributo-errore">
+						
+						<div class="errore"><span th:if="${#fields.hasErrors('artista.nome')}"
+                		th:errors="${artista.nome}" th:style="'color:red'"></span></div><div><span class="label">Nome:</span></div>
+						</div>
+						<span><input type="text" th:field="${artista.nome}" placeholder="nome" required/></span>
+						
+						 <!-- il * serve a fare riferimento ai parametri di un elemento esterno-->
+						<!--<div class="errore"><span th:if="${#fields.hasErrors('user.nome')}"
+                		th:errors="${user.nome}" th:style="'color:red'"></span></div>-->
+					</div>		
+					<div class:"dato">
+						<div class:"attributo-errore">
+						
+						<div class="errore"><span th:if="${#fields.hasErrors('artista.cognome')}"
+                		th:errors="${artista.cognome}" th:style="'color:red'"></span></div><div><span class="label">Cognome:</span></div>
+						</div>
+						<span><input type="text" th:field="${artista.cognome}" placeholder="cognome" required/></span>
+
+
+					</div>
+				</div>
+				<div class="dati-interni">
+					<div class:"dato">
+					
+						<div class:"attributo-errore">
+						
+						<div class="errore"><span th:if="${#fields.hasErrors('artista.luogoNascita')}"
+                		th:errors="${artista.luogoNascita}" th:style="'color:red'"></span></div><div><span class="label">Luogo di nascita:</span></div>
+						</div>
+						<span><input type="text" placeholder="luogo di nascita" required 
+						th:field="${artista.luogoNascita}"/></span>
+						
+
+                    </div>
+					<div class:"dato">
+					
+						<div class:"attributo-errore">
+						
+						<div class="errore"><span th:if="${#fields.hasErrors('artista.nazione')}"
+                		th:errors="${artista.nazione}" th:style="'color:red'"></span></div><div><span class="label">Nazionalità:</span></div>
+						</div>
+						<span><input type="text" placeholder="nazione" required 
+						th:field="${artista.nazione}"/></span>
+						
+
+                    </div>
+				</div>
+				<div class="dati-interni">
+					<div class:"dato">
+					
+						<div class:"attributo-errore">
+						
+						<div class="errore"><span th:if="${#fields.hasErrors('artista.codice')}"
+                		th:errors="${artista.codice}" th:style="'color:red'"></span></div><div><span class="label">Codice:</span></div>
+						</div>
+						<span><input type="text" placeholder="codice" required 
+						th:field="${artista.codice}"/></span>
+						
+
+                    </div>
+					
+				</div>
+				<span><button class="botton" type="submit">Invio</button></span>
+			</div>
+		</section>
+	</form>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

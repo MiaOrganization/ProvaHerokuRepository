@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione(home='/default')")></header>
+    <div>
+    	<h4>Menu amministratore</h4>
+		<div>
+			<a th:href="@{/artisti}">Elenco artisti</a>
+   		</div>
+   		<div>
+			<a th:href="@{/admin/addArtista}">Inserisci nuovo artista</a>
+   		</div>
+   		<div>
+			<a th:href="@{/opere}">Elenco opere</a>
+   		</div>
+   		<div>
+			<a th:href="@{/admin/addOpera}">Inserisci nuova opera</a>
+   		</div>
+   		<div>
+			<a th:href="@{/collezioni}">Elenco collezioni</a>
+   		</div>
+   		<div>
+			<a th:href="@{/admin/addCollezione}">Inserisci nuova collezione</a>
+   		</div>
+   		<div>
+			<a th:href="@{/logout}">Logout</a>
+   		</div>
+    </div>
+    <footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

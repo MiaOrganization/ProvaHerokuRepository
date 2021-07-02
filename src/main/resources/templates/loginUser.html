@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='MAA')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione(home='/')"></header>
+	<div id="logging">
+		<h1>Login</h1>
+	</div>
+	<form th:action="@{/login}" method="POST">
+		<section id="external">
+			<div id="dati-container">
+				<div class="dati-interni">
+					<div class="dato">
+						<span>Username:</span>
+						<span><input name="username" type="text" required /></span>
+					</div>	
+				</div>
+				<div class="dati-interni">	
+					<div class="dato">
+						<span>Password:</span>
+						<span><input name="password" type="password" required /></span>
+					</div>
+				</div>
+				<div class="dati-interni">
+					<div class="dato">
+						<span><button class="botton" type="submit">Login</button></span>
+					</div>
+				</div>
+			</div>
+		</section>
+	</form>
+    <footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

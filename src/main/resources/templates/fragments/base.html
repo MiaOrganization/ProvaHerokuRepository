@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title)">
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/homeNew1.css}" rel="stylesheet">
+	<link th:href="@{/css/utenteForm.css}" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap" rel="stylesheet">
+	<title th:text="${title}"></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header th:fragment="intestazione(home)">
+	<nav>
+		<ul id="navigazioine">
+			<a class="linkMenu" th:href="@{${home}}"><img id="logo" src="/images/logo1.png" alt="Museo di Arte Artistica" /></a>
+			<li><a th:href="@{${home}}" class="current">Home</a></li>
+			<li><a th:href="@{/artisti}">Autori</a></li>
+			<li><a href="#">Collezioni</a></li>
+			<li><a href="#">Informazioni</a></li>
+		</ul>
+	</nav>
+	<div id="bottoni">
+				<section id="bottonCont">
+					<div class="accesso">
+					<a th:href="@{/logout}" class="botton">Logout</a></form>
+					</div>
+				</section>
+
+	    			<section id="bottonCont">
+						<div class="accesso">
+						<div><a th:href="@{/register}" class="botton">Registrati</a></div>
+						<div><a th:href="@{/login}" class="botton">Accedi</a></div>
+						</div>
+					</section>
+    	</div>
+</header>
+	
+	<footer  th:fragment="footer" id="footer">
+		<div id="intestazione"><p>INFORMAZIONI UTILI</p></div>
+		<div id="info-container">
+			<div class="info">
+				<p>CHI SIAMO:</p>
+				<ul class="utili">
+					<li>siamo un museo molto bello e affascinante, nato da poco per diffonedere cultura e bellezza.</li>
+				</ul>
+			</div>
+			<div class="info"><p>DOVE SIAMO:</p>
+				<ul class="utili">
+					<li>Via: Via Poltorrea 14;</li>
+					<li>Comune:Fiano Romano;</li>
+					<li>Provincia: Roma;</li>
+					<li>Indicazioni stradali: km 69 della via Lattea;</li>
+				</ul>
+			</div>
+			<div class="info"><p>CONTATTI:</p>
+				<ul class="utili">
+					<li><a href="#" class="fa fa-facebook"></a> Facebook: Museo di Arte Artistica;</li>
+					<li><a href="#" class="fa fa-instagram"></a> Instagram: MuseoDiArteArtistica;</li>
+					<li>	Cellulare: +39 331 1234567;</li>
+					<li>	Telefono: 0637 23345;</li>
+					<li>	Email: museodiarteartisticaroma@gmail.com</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
